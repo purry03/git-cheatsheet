@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  background: url(star-bg.svg) #ddd;
+  background: rgb(221, 221, 221, 0.5) url(star-bg.svg);
 }
 
 h1,
@@ -116,6 +116,7 @@ ul li {
 }
 
 .footer-container {
+  background-color: #ccc;
   padding: 20px 0;
   border-top: 1px solid #ccc;
   text-align: center;
