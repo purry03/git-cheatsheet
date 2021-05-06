@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="nav-container">
+      <h1 class="nav-heading">Git Cheatsheet</h1>
+    </div>
+    <div class="main-container">
+      <div class="column">
+        <h1 class="main-heading">Install</h1>
+        <h3 class="sub-heading">GitHub Desktop</h3>
+        <a href="desktop.github.com">desktop.github.com </a>
+        <h3 class="sub-heading">Git for All Platforms</h3>
+        <a href="desktop.github.com">git-scm.com</a>
+        <h1 class="top-heading">Configure tooling</h1>
+        <p class="text">
+          Configure user information for all local repositories
+        </p>
+        <pre>$ git config --global user.name "[name]"</pre>
+        <p class="text">
+          Sets the name you want attached to your commit transactions
+        </p>
+        <pre>$ git config --global user.email "[email address]"</pre>
+        <p class="text">
+          Sets the email you want attached to your commit transactions
+        </p>
+        <pre>$ git config --global color.ui auto</pre>
+        <p class="text">Enables helpful colorization of command line output</p>
+        <h1 class="top-heading">Branches</h1>
+        <p class="text">
+          Branches are an important part of working with Git. Any commits you
+          make will be made on the branch you’re currently “checked out” to. Use
+          git status to see which branch that is.
+        </p>
+        <pre>$ git branch [branch-name]</pre>
+        <p class="text">Creates a new branch</p>
+        <pre>$ git checkout [branch-name]</pre>
+        <p class="text">
+          Switches to the specified branch and updates the working directory
+        </p>
+        <pre>$ git merge [branch]</pre>
+        <p class="text">
+          Combines the specified branch’s history into the current branch. This
+          is usually done in pull requests, but is an important Git operation.
+        </p>
+        <pre>$ git branch -d [branch-name]</pre>
+        <p class="text">Deletes the specified branch</p>
+        <h1 class="top-heading">Make changes</h1>
+
+        <p class="text">Browse and inspect the evolution of project files</p>
+
+        <pre>$ git log</pre>
+
+        <p class="text">Lists version history for the current branch</p>
+
+        <pre>$ git log --follow [file]</pre>
+
+        <p class="text">
+          Lists version history for a file, beyond renames (works only for a
+          single file)
+        </p>
+
+        <pre>$ git diff [first-branch]...[second-branch]</pre>
+
+        <p class="text">Shows content differences between two branches</p>
+
+        <pre>$ git show [commit]</pre>
+
+        <p class="text">
+          Outputs metadata and content changes of the specified commit
+        </p>
+
+        <pre>$ git add [file]</pre>
+
+        <p class="text">Snapshots the file in preparation for versioning</p>
+
+        <pre>$ git commit -m "[descriptive message]"</pre>
+
+        <p class="text">
+          Records file snapshots permanently in version history
+        </p>
+
+        <h1 class="top-heading">Redo commits</h1>
+
+        <p class="text">Erase mistakes and craft replacement history</p>
+
+        <pre>$ git reset [commit]</pre>
+
+        <p class="text">
+          Undoes all commits after [commit], preserving changes locally
+        </p>
+
+        <pre>$ git reset --hard [commit]</pre>
+
+        <p class="text">
+          Discards all history and changes back to the specified commit
+        </p>
+
+        <div class="embed">
+          CAUTION! Changing history can have nasty side effects. If you need to
+          change commits that exist on GitHub (the remote), proceed with
+          caution. If you need help, reach out at github.community or contact
+          support.
+        </div>
+      </div>
+      <div class="column">
+        <h1 class="top-heading">Create repositories</h1>
+        <p class="text">
+          A new repository can either be created locally, or an existing
+          repository can be cloned. When a repository was initialized locally,
+          you have to push it to GitHub afterwards.
+        </p>
+
+        <pre>$ git init</pre>
+
+        <p class="text">
+          The git init command turns an existing directory into a new Git
+          repository inside the folder you are running this command. After using
+          the git init command, link the local repository to an empty GitHub
+          repository using the following command:
+        </p>
+        <pre>$ git remote add origin [url]</pre>
+        <p class="text">
+          Specifies the remote repository for your local repository. The url
+          points to a repository on GitHub.
+        </p>
+        <pre>$ git clone [url]</pre>
+
+        <p class="text">
+          Clone (download) a repository that already exists on GitHub, including
+          all of the files, branches, and commits
+        </p>
+
+        <h1 class="main-heading">The .gitignore file</h1>
+
+        <p class="text">
+          Sometimes it may be a good idea to exclude files from being tracked
+          with Git. This is typically done in a special file named .gitignore.
+          You can find helpful templates for .gitignore files at
+          <span
+            ><a href="github.com/github/gitignore"
+              >github.com/github/gitignore</a
+            ></span
+          >.
+        </p>
+
+        <h1 class="main-heading">Synchronize changes</h1>
+
+        <p class="text">
+          Synchronize your local repository with the remote repository on
+          GitHub.com
+        </p>
+
+        <pre>$ git fetch</pre>
+
+        <p class="text">
+          Downloads all history from the remote tracking branches
+        </p>
+
+        <pre>$ git merge</pre>
+
+        <p class="text">
+          Combines remote tracking branches into current local branch
+        </p>
+
+        <pre>$ git push</pre>
+
+        <p class="text">Uploads all local branch commits to GitHub</p>
+
+        <pre>$ git pull</pre>
+
+        <p class="text">
+          Updates your current local working branch with all new commits from
+          the corresponding remote branch on GitHub. git pull is a combination
+          of git fetch and git merge
+        </p>
+
+        <h1 class="main-heading">Glossary</h1>
+        <ul>
+          <li>
+            <strong>git</strong>: an open source, distributed version-control
+            system
+          </li>
+          <li>
+            <strong>GitHub</strong>: a platform for hosting and collaborating on
+            Git repositories
+          </li>
+          <li>
+            <strong>commit</strong>: a Git object, a snapshot of your entire
+            repository compressed into a SHA
+          </li>
+          <li>
+            <strong>branch</strong>: a lightweight movable pointer to a commit
+          </li>
+          <li>
+            <strong>clone</strong>: a local version of a repository, including
+            all commits and branches
+          </li>
+          <li>
+            <strong>remote</strong>: a common repository on GitHub that all team
+            members use to exchange their changes
+          </li>
+          <li>
+            <strong>fork</strong>: a copy of a repository on GitHub owned by a
+            different user
+          </li>
+          <li>
+            <strong>pull request</strong>: a place to compare and discuss the
+            differences introduced on a branch with reviews, comments,
+            integrated tests, and more
+          </li>
+          <li>
+            <strong>HEAD</strong>: representing your current working directory,
+            the HEAD pointer can be moved to different branches, tags, or
+            commits when using git checkout
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <p class="footer-text">Made with ❤️ by purry03</p>
+    </div>
+
+    <script src="" async defer></script>
+  </body>
+</html>
