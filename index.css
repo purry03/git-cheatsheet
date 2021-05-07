@@ -12,6 +12,7 @@ body {
 
 body {
   background: rgb(221, 221, 221, 0.5) url(star-bg.svg);
+  transition: background-position 0s ease;
 }
 
 h1,
@@ -46,6 +47,7 @@ a {
 }
 
 .main-container {
+  background-color: rgba(221, 221, 221, 0.33);
   height: max-content;
   max-width: 100vw;
   padding: 0 15px;
